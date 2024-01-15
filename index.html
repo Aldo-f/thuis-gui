@@ -2,19 +2,28 @@
 <html>
 
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
   <meta http-equiv="Content-Security-Policy"
-    content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'">
-  <link href="./styles.css" rel="stylesheet">
+    content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'" />
+  <link href="./styles.css" rel="stylesheet" />
   <title>thuis-GUI</title>
 </head>
 
 <body>
   <h1>thuis-GUI</h1>
-  We are using Node.js <span id="node-version"></span>,
-  Chromium <span id="chrome-version"></span>,
-  and Electron <span id="electron-version"></span>.
+  We are using Node.js <span id="node-version"></span>, Chromium
+  <span id="chrome-version"></span>, and Electron
+  <span id="electron-version"></span>.
+  
+  <!-- The input field for the MPD URL and the button to trigger the batch file execution -->
+  <div>
+    <label for="mpdUrl">MPD URL:</label>
+    <input type="text" id="mpdUrl" />
+    <button id="runBatch">Run Batch</button>
+    <!-- Add this button in your HTML file where you want to trigger the download -->
+    <button id="downloadButton" style="display:none;">Download File</button>
+  </div>
 
   <!-- You can also require other files to run in this process -->
   <script src="./renderer.js"></script>
