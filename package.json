@@ -1,13 +1,25 @@
 {
-  "name": "thuis",
+  "name": "@aldo-f/thuis-gui",
   "version": "1.0.0",
   "description": "thuis; download by .mpd",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
   },
   "license": "CC0-1.0",
   "devDependencies": {
-    "electron": "^28.1.3"
-  }
+    "electron": "^28.1.3",
+    "electron-builder": "^24.9.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Aldo-f/thuis-gui.git"
+  },
+  "author": "aldo-f",
+  "bugs": {
+    "url": "https://github.com/Aldo-f/thuis-gui/issues"
+  },
+  "homepage": "https://github.com/Aldo-f/thuis-gui#readme"
 }

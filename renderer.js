@@ -27,13 +27,20 @@ document.addEventListener("DOMContentLoaded", () => {
       // Show the download button
       downloadButton.style.display = "block";
 
-      // Now you can use ipcRenderer to request the main process to show the save dialog
-      downloadButton.addEventListener("click", () => {
-        console.log(`Download file: ${result.file}`);
-        electronApi.ipcRenderer.send("show-save-dialog", result.file);
-      });
+      // Remove any existing click event listener
+      downloadButton.removeEventListener("click", handleDownloadClick);
+
+      // Add the new click event listener
+      downloadButton.addEventListener("click", () =>
+        handleDownloadClick(result)
+      );
     }
   });
 });
 
+// Click handler to download resulting file
+const handleDownloadClick = (result) => {
+  console.log(`Download file: ${result.file}`);
+  electronApi.ipcRenderer.send("show-save-dialog", result.file);
+};
 

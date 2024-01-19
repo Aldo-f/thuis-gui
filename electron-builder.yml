@@ -1,0 +1,4 @@
+appId: be.usful.thuis
+productName: thuis-GUI
+directories:
+  output: dist

@@ -23,7 +23,7 @@ function createWindow() {
 // Listen for the 'run-batch' event from the renderer process
 ipcMain.on("run-batch", (event, mpdUrl) => {
   // Modify as needed, this is where you can use the mpdUrl and execute your batch file
-  const batFilePath = "thuis.bat";
+  const batFilePath = path.join(__dirname, "thuis.ps1");
   const command = `${batFilePath} ${mpdUrl}`;
 
   exec(command, (error, stdout, stderr) => {
@@ -35,7 +35,7 @@ ipcMain.on("run-batch", (event, mpdUrl) => {
     const outputPath = stdout.trim();
 
     const match = outputPath.match(
-      /File has been downloaded successfully to: (.*?\.mp4)/
+      /File has been downloaded successfully to: (.+)/
     );
 
     const result = { response: outputPath, file: null };
